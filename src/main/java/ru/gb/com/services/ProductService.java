@@ -3,10 +3,12 @@ package ru.gb.com.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.gb.com.exceptions.ResourseNotFoundException;
 import ru.gb.com.items.Product;
 import ru.gb.com.repositories.ProductRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -19,7 +21,8 @@ public class ProductService {
     }
 
     public Product getProductByID(Long id){
-        return productRepository.findById(id).orElseThrow();
+        return productRepository.findById(id).orElseThrow(() -> new ResourseNotFoundException("Product with id: "+
+                id+"hadn't founded"));
 
     }
 

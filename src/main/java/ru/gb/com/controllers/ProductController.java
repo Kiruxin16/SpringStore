@@ -2,12 +2,16 @@ package ru.gb.com.controllers;
 
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.gb.com.items.Product;
 import ru.gb.com.services.ProductService;
 
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -17,6 +21,16 @@ public class ProductController {
     private final ProductService productService;
 
 
+
+/*    @GetMapping("/products/{id}")
+    public ResponseEntity<?> getProductByID(@PathVariable long id){
+        Optional<Product> product = productService.getProductByID(id);
+        if(product.isPresent())
+        {
+            return new  ResponseEntity<>(product.get(), HttpStatus.OK);
+        }
+        else return  new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }*/
 
     @GetMapping("/products/{id}")
     public Product getProductByID(@PathVariable long id){
