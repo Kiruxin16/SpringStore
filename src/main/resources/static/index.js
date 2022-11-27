@@ -1,35 +1,30 @@
-angular.module('app',[]).controller('indexController',function ($scope,$http) {
+angular.module('application',[]).controller('indexController',function ($scope,$http) {
     const contextPath ='http://localhost:8189/application';
 
     $scope.loadProducts =function(){
-        $http.get(contextPath +'/products/list')
+        $http.get(contextPath +'/products')
             .then(function (response){
                 $scope.getProductList=response.data;
             });
     };
 
-    $scope.changePrice = function(id,price){
+    $scope.filterByCost = function(){
+        console.log($scope.filters);
         $http({
-            url:contextPath +'/products/change',
+            url:contextPath +'/products/filter/diapasone',
             method: 'GET',
             params:{
-                id:id,
-                priceDelta:price
+                minCost: $scope.filters.min,
+                maxCost: $scope.filters.max
             }
         })
             .then(function(response){
-                $scope.loadProducts();
+                $scope.getProductList=response.data;
         });
     };
 
     $scope.removeProduct = function(id){
-        $http({
-            url:contextPath+'/products/remove',
-            method: 'GET',
-            params:{
-                id:id
-            }
-        })
+        $http.get(contextPath+'/products/delete/'+id)
             .then(function(response){
                 $scope.loadProducts();
             });

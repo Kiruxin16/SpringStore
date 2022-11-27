@@ -14,12 +14,24 @@
     <div class="container" ng-controller="indexController">
 
         <h3>Учет товаров</h3>
-        <span>Наименование</span>
-        <input name="title" type="text" id="title"/>
-        <span>цена</span>
-        <input name="price" type="number" id="price"/>
-        <button class="btn btn-success" ng-click='addProduct()'>add</button>
+        <span>Ценовой фильтр</span>
+        <form     class="row g-3" novalidate  ng-submit ="filterByCost()">
+            <div class="col-auto">
+                <input class="form-control" type="number" placeholder="мин. цена"   ng-model="filters.min"/>
+            </div>
+            <div class="col-auto">
+                <span >-</span>
+            </div>
+            <div class="col-auto">
+                <input class="form-control" type="number" placeholder="макс. цена"  ng-model="filters.max"/>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-success" >Применить фильтр</button>
+            </div>
+        </form>
+        <p></p>
         <table class="table table-hover" cellpadding="0" cellspacing="0" >
+
 
             <tr>
                 <td>ID</td>
@@ -31,11 +43,7 @@
                 <tr ng-repeat="p in getProductList">
                     <td>{{p.id}}</td>
                     <td>{{p.title}}</td>
-                    <td>
-                        <button class ="btn btn-primary" ng-click="changePrice(p.id,+50)">+</button>
-                        {{p.price}}
-                        <button class ="btn btn-danger" ng-click="changePrice(p.id,-50)">-</button>
-                    </td>
+                    <td>{{p.price}}</td>
                     <td>
                         <button class ="btn btn-outline-danger" ng-click="removeProduct(p.id)">X</button>
                     </td>
@@ -43,7 +51,9 @@
 
             </tbody>
         </table>
+
     </div>
+
 
 </body>
 </html>
