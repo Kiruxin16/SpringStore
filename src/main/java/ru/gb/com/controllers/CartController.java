@@ -7,6 +7,7 @@ import ru.gb.com.dto.CartItemDto;
 import ru.gb.com.dto.ProductDto;
 import ru.gb.com.items.CartItem;
 import ru.gb.com.services.CartService;
+import ru.gb.com.services.ProductService;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
 public class CartController {
 
     private final CartService cartService;
+    private final ProductService productService;
 
 
     @GetMapping
@@ -30,7 +32,8 @@ public class CartController {
 
     @PostMapping("/{id}")
     public ProductDto addProductTocArt(ProductDto product){
-        return product;
+        productService.getProductByID(product.getId());
+        return cartService.addTocart(product);
     }
 
 
