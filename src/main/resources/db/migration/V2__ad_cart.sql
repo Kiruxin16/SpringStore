@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS cart_items (id bigserial PRIMARY KEY, title varchar(255), price int, amount int);

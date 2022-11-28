@@ -3,16 +3,9 @@ package ru.gb.com.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.*;
 import ru.gb.com.dto.ProductDto;
-import ru.gb.com.dto.ProductDtoCreator;
-import ru.gb.com.items.Product;
-import ru.gb.com.repositories.specification.ProductSpecification;
 import ru.gb.com.services.ProductService;
-
-
-import java.util.List;
 
 
 @RestController
@@ -57,8 +50,9 @@ public class ProductController {
 
 
     @PutMapping
-    public void updateProduct(@RequestBody ProductDto product){
-        productService.addProduct(product);
+    public ProductDto updateProduct(@RequestBody ProductDto product){
+        productService.updateProduct(product);
+        return product;
     }
 
     @DeleteMapping("/{id}")
@@ -68,8 +62,9 @@ public class ProductController {
 
 
     @PostMapping()
-    public void addProduct(@RequestBody ProductDto product){
-        productService.addProduct(product);
+    public ProductDto addProduct(@RequestBody ProductDto product){
+
+        return productService.addProduct(product);
     }
 
 
