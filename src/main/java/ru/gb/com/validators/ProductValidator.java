@@ -1,11 +1,13 @@
 package ru.gb.com.validators;
 
+import org.springframework.stereotype.Component;
 import ru.gb.com.dto.ProductDto;
 import ru.gb.com.exceptions.ValidateException;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ProductValidator {
 
     List<String> messagePool;
