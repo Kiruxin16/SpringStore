@@ -2,14 +2,13 @@ package ru.gb.com.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.gb.com.items.Product;
 
 @Data
 @NoArgsConstructor
 @Component
-public class ProductDtoCreator {
+public class ProductDtoConvertor {
 
 
 
