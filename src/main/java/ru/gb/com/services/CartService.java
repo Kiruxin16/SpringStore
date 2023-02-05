@@ -4,15 +4,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import ru.gb.com.dto.CartDtoConvertor;
+import ru.gb.com.dto.convertors.CartDtoConvertor;
 import ru.gb.com.dto.CartItemDto;
 import ru.gb.com.dto.ProductDto;
-import ru.gb.com.exceptions.ResourseNotFoundException;
-import ru.gb.com.items.CartItem;
+import ru.gb.com.entities.CartItem;
 import ru.gb.com.repositories.CartItemsRepository;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

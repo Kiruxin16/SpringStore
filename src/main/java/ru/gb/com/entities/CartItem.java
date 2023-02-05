@@ -1,4 +1,4 @@
-package ru.gb.com.items;
+package ru.gb.com.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

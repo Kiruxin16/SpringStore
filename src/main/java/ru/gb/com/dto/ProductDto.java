@@ -3,7 +3,7 @@ package ru.gb.com.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.gb.com.items.Product;
+import ru.gb.com.entities.Product;
 
 @Data
 @NoArgsConstructor

@@ -5,7 +5,7 @@ package ru.gb.com.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
-import ru.gb.com.items.Product;
+import ru.gb.com.entities.Product;
 
 import java.util.List;
 
