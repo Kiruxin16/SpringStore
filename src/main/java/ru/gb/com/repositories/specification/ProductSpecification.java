@@ -1,7 +1,7 @@
 package ru.gb.com.repositories.specification;
 
 import org.springframework.data.jpa.domain.Specification;
-import ru.gb.com.items.Product;
+import ru.gb.com.entities.Product;
 
 public class ProductSpecification {
     public static Specification<Product> priceGreaterThanOrEqualTo(Integer price){

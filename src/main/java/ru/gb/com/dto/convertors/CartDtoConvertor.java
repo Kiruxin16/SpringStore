@@ -1,9 +1,15 @@
-package ru.gb.com.dto;
+package ru.gb.com.dto.convertors;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
-import ru.gb.com.items.CartItem;
+import ru.gb.com.dto.CartItemDto;
+import ru.gb.com.dto.ProductDto;
+import ru.gb.com.entities.CartItem;
 
 @Component
+@Data
+@NoArgsConstructor
 public class CartDtoConvertor {
 
     public CartItemDto cartItemToDto(CartItem cartItem){

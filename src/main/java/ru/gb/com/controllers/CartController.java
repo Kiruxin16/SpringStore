@@ -5,11 +5,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import ru.gb.com.dto.CartItemDto;
 import ru.gb.com.dto.ProductDto;
-import ru.gb.com.items.CartItem;
 import ru.gb.com.services.CartService;
 import ru.gb.com.services.ProductService;
-
-import java.util.List;
 
 
 @RestController

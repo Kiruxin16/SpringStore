@@ -1,9 +1,10 @@
-package ru.gb.com.dto;
+package ru.gb.com.dto.convertors;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
-import ru.gb.com.items.Product;
+import ru.gb.com.dto.ProductDto;
+import ru.gb.com.entities.Product;
 
 @Data
 @NoArgsConstructor
